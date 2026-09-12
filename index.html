@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>The Overthinking Department™️</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cinzel:wght@500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         ALL CSS IS INSIDE THIS HTML FILE
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           RESET
+        ================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    #293951 0%,
+                    #111c2b 40%,
+                    #070c14 100%
+                );
+
+            color: #ead39b;
+
+            font-family: "Libre Baskerville", serif;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =================================================
+           MAGICAL STARS
+        ================================================= */
+
+        .stars {
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 0;
+
+            background-image:
+                radial-gradient(
+                    circle,
+                    rgba(255, 223, 153, 0.7) 1px,
+                    transparent 1px
+                );
+
+            background-size: 90px 90px;
+
+            opacity: 0.25;
+
+            animation: starsMove 15s linear infinite;
+        }
+
+
+        @keyframes starsMove {
+
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(90px);
+            }
+
+        }
+
+
+        /* =================================================
+           FLOATING CANDLES
+        ================================================= */
+
+        .candle {
+            position: fixed;
+
+            font-size: 35px;
+
+            z-index: 2;
+
+            pointer-events: none;
+
+            animation:
+                candleFloat 4s ease-in-out infinite;
+
+            filter:
+                drop-shadow(
+                    0 0 12px
+                    rgba(255, 190, 70, 0.7)
+                );
+        }
+
+
+        .candle.one {
+            top: 15%;
+            left: 3%;
+        }
+
+
+        .candle.two {
+            top: 30%;
+            right: 3%;
+
+            animation-delay: 1s;
+        }
+
+
+        .candle.three {
+            bottom: 15%;
+            left: 8%;
+
+            animation-delay: 2s;
+        }
+
+
+        @keyframes candleFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+
+        }
+
+
+        /* =================================================
+           MAIN PAGE
+        ================================================= */
+
+        .page {
+            position: relative;
+
+            z-index: 1;
+
+            min-height: 100vh;
+
+            overflow: hidden;
+        }
+
+
+        /* =================================================
+           HEADER
+        ================================================= */
+
+        header {
+
+            min-height: 150px;
+
+            padding: 25px 5%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            border-bottom:
+                1px solid
+                rgba(222, 181, 91, 0.4);
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(5, 10, 18, 0.98),
+                    rgba(11, 20, 32, 0.9)
+                );
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+
+        /* =================================================
+           LOGO
+        ================================================= */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+        }
+
+
+        .owl {
+
+            width: 85px;
+            height: 85px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 65px;
+
+            filter:
+                drop-shadow(
+                    0 0 12px
+                    rgba(230, 186, 88, 0.35)
+                );
+
+            animation:
+                owlFloat 4s ease-in-out infinite;
+        }
+
+
+        @keyframes owlFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+        }
+
+
+        .logo h1 {
+
+            font-family: "Cinzel", serif;
+
+            font-size:
+                clamp(22px, 3vw, 39px);
+
+            line-height: 1.05;
+
+            letter-spacing: 2px;
+
+            color: #e8bd67;
+
+            text-shadow:
+                0 2px 5px
+                rgba(0, 0, 0, 0.5);
+        }
+
+
+        .logo h1 sup {
+
+            font-size: 11px;
+        }
+
+
+        .tagline {
+
+            margin-top: 8px;
+
+            font-family: "Caveat", cursive;
+
+            font-size: 21px;
+
+            color: #d9c69b;
+        }
+
+
+        /* =================================================
+           NAVIGATION
+        ================================================= */
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        nav a {
+
+            text-decoration: none;
+
+            color: #e6ce91;
+
+            font-family: "Cinzel", serif;
+
+            font-size: 15px;
+
+            padding: 12px 20px;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+
+            color: white;
+
+            transform:
+                translateY(-3px);
+
+            background:
+                rgba(
+                    219,
+                    174,
+                    80,
+                    0.12
+                );
+        }
+
+
+        nav a.active {
+
+            color: #32190c;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e1bc70,
+                    #b98535
+                );
+
+            box-shadow:
+                0 0 15px
+                rgba(218, 177, 91, 0.25);
+        }
+
+
+        .department-number {
+
+            margin-left: 15px;
+
+            padding: 11px 18px;
+
+            border:
+                1px solid
+                #cda75a;
+
+            border-radius: 50%;
+
+            transform: rotate(-4deg);
+
+            font-family: "Caveat", cursive;
+
+            font-size: 20px;
+
+            color: #e5c479;
+        }
+
+
+        /* =================================================
+           HERO
+        ================================================= */
+
+        .hero {
+
+            position: relative;
+
+            min-height: 440px;
+
+            padding: 65px 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+
+        /* Castle background */
+
+        .castle {
+
+            position: absolute;
+
+            right: 3%;
+
+            bottom: -10px;
+
+            font-size:
+                clamp(130px, 22vw, 280px);
+
+            opacity: 0.17;
+
+            filter:
+                grayscale(1);
+
+            z-index: 0;
+        }
+
+
+        /* =================================================
+           HERO PARCHMENT
+        ================================================= */
+
+        .hero-paper {
+
+            position: relative;
+
+            width: min(850px, 90%);
+
+            padding: 45px 40px;
+
+            text-align: center;
+
+            color: #23160c;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0d8a2,
+                    #caa66b
+                );
+
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.5),
+
+                inset 0 0 50px
+                rgba(80, 45, 15, 0.2);
+
+            clip-path:
+                polygon(
+                    2% 5%,
+                    97% 1%,
+                    100% 94%,
+                    95% 100%,
+                    5% 98%,
+                    0% 50%
+                );
+
+            transform:
+                rotate(-1deg);
+
+            z-index: 3;
+        }
+
+
+        .hero-small {
+
+            font-family: "Caveat", cursive;
+
+            font-size: 21px;
+
+            color: #69471f;
+
+            margin-bottom: 12px;
+        }
+
+
+        .hero-paper h2 {
+
+            font-family: "Cinzel", serif;
+
+            font-size:
+                clamp(30px, 5vw, 60px);
+
+            line-height: 1.15;
+        }
+
+
+        .hero-paper h2 span {
+
+            color: #791e2e;
+
+            text-shadow:
+                1px 1px #e2bb6d;
+        }
+
+
+        .magic-line {
+
+            margin-top: 18px;
+
+            color: #70461c;
+
+            font-size: 22px;
+        }
+
+
+        /* =================================================
+           STICKY NOTES
+        ================================================= */
+
+        .sticky {
+
+            position: absolute;
+
+            width: 160px;
+
+            padding: 22px 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d8b879,
+                    #b99251
+                );
+
+            color: #27180d;
+
+            font-family: "Caveat", cursive;
+
+            font-size: 21px;
+
+            line-height: 1.1;
+
+            box-shadow:
+                0 12px 25px
+                rgba(0, 0, 0, 0.4);
+
+            z-index: 4;
+        }
+
+
+        .sticky.left {
+
+            left: 5%;
+
+            top: 70px;
+
+            transform:
+                rotate(-7deg);
+        }
+
+
+        .sticky.right {
+
+            right: 5%;
+
+            bottom: 50px;
+
+            transform:
+                rotate(6deg);
+        }
+
+
+        /* =================================================
+           CATEGORY SECTION
+        ================================================= */
+
+        .categories {
+
+            width: 92%;
+
+            max-width: 1400px;
+
+            margin:
+                -10px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 18px;
+
+            position: relative;
+
+            z-index: 5;
+        }
+
+
+        /* =================================================
+           CATEGORY CARD
+        ================================================= */
+
+        .card {
+
+            position: relative;
+
+            min-height: 285px;
+
+            padding: 20px 12px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            color: #ead7a6;
+
+            border:
+                1px solid
+                rgba(226, 188, 104, 0.5);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 8px;
+
+            border:
+                1px solid
+                rgba(255, 223, 146, 0.18);
+
+            pointer-events: none;
+        }
+
+
+        .card:hover {
+
+            transform:
+                translateY(-10px);
+
+            box-shadow:
+                0 20px 40px
+                rgba(0, 0, 0, 0.55),
+
+                0 0 25px
+                rgba(222, 177, 79, 0.2);
+        }
+
+
+        /* Individual card backgrounds */
+
+        .relationship {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #6c202f,
+                    #32131b
+                );
+        }
+
+
+        .friendship {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #70551e,
+                    #30240e
+                );
+        }
+
+
+        .thoughts {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #204c6a,
+                    #111e2e
+                );
+        }
+
+
+        .college {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #315841,
+                    #162c21
+                );
+        }
+
+
+        .scenarios {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #662b38,
+                    #2b131b
+                );
+        }
+
+
+        /* =================================================
+           CREST
+        ================================================= */
+
+        .crest {
+
+            width: 105px;
+
+            height: 115px;
+
+            margin:
+                0 auto 10px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 55px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #d4aa57,
+                    #5d3a13
+                );
+
+            clip-path:
+                polygon(
+                    50% 0%,
+                    90% 15%,
+                    100% 50%,
+                    80% 90%,
+                    50% 100%,
+                    20% 90%,
+                    0% 50%,
+                    10% 15%
+                );
+
+            filter:
+                drop-shadow(
+                    0 6px 7px
+                    rgba(0, 0, 0, 0.4)
+                );
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .card:hover .crest {
+
+            transform:
+                scale(1.08)
+                rotate(2deg);
+        }
+
+
+        .card h3 {
+
+            font-family: "Cinzel", serif;
+
+            font-size: 17px;
+
+            color: #f1d083;
+
+            margin-bottom: 10px;
+        }
+
+
+        .card p {
+
+            font-family: "Caveat", cursive;
+
+            font-size: 20px;
+
+            line-height: 1.15;
+
+            color: #e6d7af;
+        }
+
+
+        .arrow {
+
+            margin-top: 15px;
+
+            font-size: 27px;
+
+            color: #d9ad57;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .card:hover .arrow {
+
+            transform:
+                translateX(9px);
+        }
+
+
+        /* =================================================
+           SURPRISE AREA
+        ================================================= */
+
+        .surprise-section {
+
+            position: relative;
+
+            min-height: 260px;
+
+            margin-top: 40px;
+
+            padding:
+                35px 7%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #281a0f,
+                    #160d08
+                );
+
+            border-top:
+                2px solid
+                #765226;
+
+            border-bottom:
+                2px solid
+                #765226;
+        }
+
+
+        /* =================================================
+           NOTE
+        ================================================= */
+
+        .job-note {
+
+            width: 230px;
+
+            padding: 20px;
+
+            background:
+                #d6b675;
+
+            color: #25160c;
+
+            font-family:
+                "Caveat", cursive;
+
+            font-size: 21px;
+
+            transform:
+                rotate(-4deg);
+
+            box-shadow:
+                0 12px 20px
+                rgba(0, 0, 0, 0.45);
+        }
+
+
+        .job-note .cup {
+
+            font-size: 42px;
+        }
+
+
+        /* =================================================
+           SURPRISE BUTTON
+        ================================================= */
+
+        .surprise-container {
+
+            text-align: center;
+        }
+
+
+        .surprise-container > p {
+
+            font-family:
+                "Cinzel", serif;
+
+            font-size: 17px;
+
+            color: #e6cc8f;
+
+            margin-bottom: 15px;
+        }
+
+
+        #surpriseButton {
+
+            padding:
+                16px 40px;
+
+            border:
+                2px solid
+                #d7ad58;
+
+            border-radius: 8px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #762333,
+                    #35131d
+                );
+
+            color:
+                #f1cf7d;
+
+            font-family:
+                "Cinzel", serif;
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px
+                rgba(0, 0, 0, 0.5);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        #surpriseButton:hover {
+
+            transform:
+                scale(1.06);
+
+            box-shadow:
+                0 0 25px
+                rgba(220, 175, 82, 0.4);
+        }
+
+
+        #surpriseButton:active {
+
+            transform:
+                scale(0.95);
+        }
+
+
+        /* =================================================
+           OWL
+        ================================================= */
+
+        .sleepy-owl {
+
+            position: relative;
+
+            font-size: 95px;
+
+            animation:
+                owlFloat 5s ease-in-out infinite;
+        }
+
+
+        .bubble {
+
+            position: absolute;
+
+            width: 135px;
+
+            padding: 14px;
+
+            right: 55px;
+
+            top: -55px;
+
+            background:
+                #d6ba7d;
+
+            color:
+                #2a190c;
+
+            border-radius: 50%;
+
+            font-family:
+                "Caveat", cursive;
+
+            font-size: 19px;
+
+            text-align: center;
+        }
+
+
+        /* =================================================
+           FOOTER
+        ================================================= */
+
+        footer {
+
+            min-height: 130px;
+
+            padding:
+                25px 6%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 25px;
+
+            background:
+                #0a111b;
+
+            color:
+                #d7bf82;
+
+            font-family:
+                "Caveat", cursive;
+        }
+
+
+        .footer-part {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+        }
+
+
+        .footer-icon {
+
+            font-size: 35px;
+        }
+
+
+        .footer-part p {
+
+            font-size: 19px;
+
+            margin-bottom: 3px;
+        }
+
+
+        .footer-part small {
+
+            font-size: 16px;
+        }
+
+
+        .divider {
+
+            color:
+                #967136;
+
+            font-size: 24px;
+        }
+
+
+        .copyright {
+
+            text-align: right;
+
+            font-size: 17px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =================================================
+           POPUP
+        ================================================= */
+
+        .popup {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 100;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            background:
+                rgba(3, 7, 12, 0.82);
+
+            backdrop-filter:
+                blur(5px);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+
+        .popup.show {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        .popup-box {
+
+            position: relative;
+
+            width:
+                min(600px, 92%);
+
+            padding:
+                50px 35px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #efd7a0,
+                    #c49a5c
+                );
+
+            color:
+                #24160b;
+
+            border:
+                5px solid
+                #6e461e;
+
+            box-shadow:
+                0 25px 80px
+                rgba(0, 0, 0, 0.7);
+
+            transform:
+                scale(0.75)
+                rotate(-3deg);
+
+            transition:
+                transform 0.35s ease;
+        }
+
+
+        .popup.show .popup-box {
+
+            transform:
+                scale(1)
+                rotate(0);
+        }
+
+
+        .close {
+
+            position: absolute;
+
+            top: 8px;
+
+            right: 15px;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 32px;
+
+            color: #3b210f;
+
+            cursor: pointer;
+        }
+
+
+        .popup-star {
+
+            font-size: 35px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .popup-box h2 {
+
+            font-family:
+                "Cinzel", serif;
+
+            font-size:
+                clamp(20px, 4vw, 30px);
+
+            margin-bottom: 25px;
+        }
+
+
+        #randomThought {
+
+            font-family:
+                "Caveat", cursive;
+
+            font-size:
+                clamp(24px, 4vw, 34px);
+
+            line-height: 1.3;
+
+            font-style: italic;
+        }
+
+
+        .magic-symbols {
+
+            margin-top: 25px;
+
+            font-size: 25px;
+        }
+
+
+        /* =================================================
+           TABLET
+        ================================================= */
+
+        @media (max-width: 1100px) {
+
+            .categories {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+
+            .sticky {
+
+                display: none;
+            }
+
+
+            .surprise-section {
+
+                padding:
+                    35px 5%;
+            }
+
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================= */
+
+        @media (max-width: 750px) {
+
+            header {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding:
+                    25px 15px;
+            }
+
+
+            .logo {
+
+                flex-direction: column;
+
+            }
+
+
+            nav {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .department-number {
+
+                margin-left: 0;
+            }
+
+
+            .hero {
+
+                min-height: 370px;
+
+                padding:
+                    45px 15px;
+            }
+
+
+            .hero-paper {
+
+                padding:
+                    40px 20px;
+            }
+
+
+            .categories {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                width: 92%;
+            }
+
+
+            .surprise-section {
+
+                flex-direction: column;
+
+                padding:
+                    40px 20px;
+            }
+
+
+            footer {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .copyright {
+
+                text-align: center;
+            }
+
+        }
+
+
+        /* =================================================
+           SMALL MOBILE
+        ================================================= */
+
+        @media (max-width: 480px) {
+
+            .categories {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .logo h1 {
+
+                font-size: 25px;
+            }
+
+
+            .tagline {
+
+                font-size: 18px;
+            }
+
+
+            nav a {
+
+                padding:
+                    8px 10px;
+
+                font-size: 13px;
+            }
+
+
+            .department-number {
+
+                font-size: 17px;
+            }
+
+
+            .hero-paper h2 {
+
+                font-size: 29px;
+            }
+
+
+            .castle {
+
+                font-size: 150px;
+            }
+
+
+            .job-note {
+
+                width: 200px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND EFFECTS
+    ====================================================== -->
+
+    <div class="stars"></div>
+
+    <div class="candle one">
+        🕯️
+    </div>
+
+    <div class="candle two">
+        🕯️
+    </div>
+
+    <div class="candle three">
+        🕯️
+    </div>
+
+
+
+    <div class="page">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header>
+
+
+            <div class="logo">
+
+                <div class="owl">
+                    🦉
+                </div>
+
+
+                <div>
+
+                    <h1>
+                        THE OVERTHINKING
+                        <br>
+                        DEPARTMENT<sup>™️</sup>
+                    </h1>
+
+                    <p class="tagline">
+                        Officially unofficial since absolutely nobody asked.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav>
+
+                <a
+                    href="index.html"
+                    class="active"
+                >
+                    Home
+                </a>
+
+
+                <a href="about.html">
+                    About
+                </a>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+
+                <div class="department-number">
+                    D.O.T. #2026 ⚡
+                </div>
+
+            </nav>
+
+        </header>
+
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+
+            <!-- Castle -->
+
+            <div class="castle">
+                🏰
+            </div>
+
+
+
+            <!-- Left note -->
+
+            <div class="sticky left">
+
+                same brain.
+
+                <br>
+
+                new worries.
+
+                <br><br>
+
+                ☺
+
+            </div>
+
+
+
+            <!-- Right note -->
+
+            <div class="sticky right">
+
+                good thoughts?
+
+                <br>
+
+                not today.
+
+                <br>
+
+                :) ↘️
+
+            </div>
+
+
+
+            <!-- Main parchment -->
+
+            <div class="hero-paper">
+
+                <p class="hero-small">
+                    ✦ A completely unnecessary question ✦
+                </p>
+
+
+                <h2>
+
+                    How would you like to
+
+                    <br>
+
+                    <span>
+                        ruin your peace
+                    </span>
+
+                    today?
+
+                </h2>
+
+
+                <div class="magic-line">
+
+                    ─────── ⚡ ───────
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CATEGORY CARDS
+        ================================================== -->
+
+        <section class="categories">
+
+
+            <!-- RELATIONSHIP -->
+
+            <a
+                href="relationship.html"
+                class="card relationship"
+            >
+
+                <div class="crest">
+                    🦁
+                </div>
+
+                <h3>
+                    RELATIONSHIP
+                </h3>
+
+                <p>
+                    For things they
+                    <br>
+                    probably didn't mean.
+                </p>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+
+            <!-- FRIENDSHIP -->
+
+            <a
+                href="friendship.html"
+                class="card friendship"
+            >
+
+                <div class="crest">
+                    🦅
+                </div>
+
+                <h3>
+                    FRIENDSHIP
+                </h3>
+
+                <p>
+                    Because "seen" can
+                    <br>
+                    mean 47 different things.
+                </p>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+
+            <!-- 3 AM THOUGHTS -->
+
+            <a
+                href="thoughts.html"
+                class="card thoughts"
+            >
+
+                <div class="crest">
+                    🌙
+                </div>
+
+                <h3>
+                    3 AM THOUGHTS
+                </h3>
+
+                <p>
+                    You should probably
+                    <br>
+                    be sleeping.
+                </p>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+
+            <!-- COLLEGE DRAMA -->
+
+            <a
+                href="college-drama.html"
+                class="card college"
+            >
+
+                <div class="crest">
+                    🐍
+                </div>
+
+                <h3>
+                    COLLEGE DRAMA
+                </h3>
+
+                <p>
+                    Because college wasn't
+                    <br>
+                    stressful enough.
+                </p>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+
+            <!-- SCENARIOS -->
+
+            <a
+                href="scenarios.html"
+                class="card scenarios"
+            >
+
+                <div class="crest">
+                    🎭
+                </div>
+
+                <h3>
+                    SCENARIOS
+                </h3>
+
+                <p>
+                    Things that will
+                    <br>
+                    probably never happen.
+                </p>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             SURPRISE SECTION
+        ================================================== -->
+
+        <section class="surprise-section">
+
+
+            <!-- Left note -->
+
+            <div class="job-note">
+
+                <span class="cup">
+                    ☕
+                </span>
+
+                <br>
+
+                overthinking
+
+                <br>
+
+                is a full time
+
+                <br>
+
+                job.
+
+                🪶
+
+            </div>
+
+
+
+            <!-- Button -->
+
+            <div class="surprise-container">
+
+                <p>
+                    DON'T KNOW WHAT TO OVERTHINK?
+                </p>
+
+
+                <button id="surpriseButton">
+
+                    🎲
+
+                    &nbsp;
+
+                    SURPRISE ME
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Owl -->
+
+            <div class="sleepy-owl">
+
+                🦉
+
+                <div class="bubble">
+
+                    what if...
+
+                    <br>
+
+                    ...?
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+
+            <div class="footer-part">
+
+                <div class="footer-icon">
+                    ⚡
+                </div>
+
+                <div>
+
+                    <p>
+                        Department of Unnecessary Thoughts
+                    </p>
+
+                    <small>
+                        Division of Things That Probably Don't Matter.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="divider">
+                ✦
+            </div>
+
+
+
+            <div class="footer-part">
+
+                <div class="footer-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <p>
+                        Disclaimer:
+                    </p>
+
+                    <small>
+                        This website has solved absolutely nothing.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="divider">
+                ✦
+            </div>
+
+
+
+            <div class="copyright">
+
+                ©️ 2026 Department of Overthinking.
+
+                <br>
+
+                All thoughts are unnecessary. ♡
+
+            </div>
+
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SURPRISE POPUP
+    ====================================================== -->
+
+    <div
+        id="thoughtPopup"
+        class="popup"
+    >
+
+        <div class="popup-box">
+
+
+            <button
+                class="close"
+                id="closePopup"
+            >
+                ×
+            </button>
+
+
+            <div class="popup-star">
+                ✦
+            </div>
+
+
+            <h2>
+                THE DEPARTMENT HAS SPOKEN
+            </h2>
+
+
+            <p id="randomThought">
+            </p>
+
+
+            <div class="magic-symbols">
+                ✧ ⚡ ✧
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* ================================================
+           RANDOM OVERTHINKING THOUGHTS
+        ================================================= */
+
+        const thoughts = [
+
+            "Why did they leave me on seen? 🫠",
+
+            "What if they secretly hate me?",
+
+            "Should I have said something different?",
+
+            "Why did they say 'okay' instead of 'okayyy'?",
+
+            "What if I become famous tomorrow?",
+
+            "Did they look at me or was I imagining it?",
+
+            "Why am I remembering something embarrassing from 2018?",
+
+            "What if I fail the exam even though I haven't studied yet?",
+
+            "They replied with 'k'. This requires investigation.",
+
+            "What if everyone is thinking about me right now?",
+
+            "Maybe I should disappear for three business days.",
+
+            "Why did I suddenly remember that awkward conversation?",
+
+            "What if I had taken a completely different decision?",
+
+            "Did that message sound rude?",
+
+            "Should I text them or wait another 47 business days?",
+
+            "Why did they type for five minutes and then send 'lol'?",
+
+            "Maybe they are busy... or maybe this is the end of our friendship.",
+
+            "What if I accidentally liked their old post?",
+
+            "Why did I wave back when they weren't waving at me?",
+
+            "I should probably stop thinking about this. Anyway, what if...?"
+
+        ];
+
+
+
+        /* ================================================
+           GET ELEMENTS
+        ================================================= */
+
+        const surpriseButton =
+            document.getElementById(
+                "surpriseButton"
+            );
+
+
+        const popup =
+            document.getElementById(
+                "thoughtPopup"
+            );
+
+
+        const randomThought =
+            document.getElementById(
+                "randomThought"
+            );
+
+
+        const closePopup =
+            document.getElementById(
+                "closePopup"
+            );
+
+
+
+        /* ================================================
+           SURPRISE BUTTON
+        ================================================= */
+
+        surpriseButton.addEventListener(
+            "click",
+            function () {
+
+
+                /*
+                   Pick a random thought
+                */
+
+                const randomNumber =
+                    Math.floor(
+                        Math.random()
+                        *
+                        thoughts.length
+                    );
+
+
+                randomThought.textContent =
+                    thoughts[randomNumber];
+
+
+                /*
+                   Open popup
+                */
+
+                popup.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+
+
+        /* ================================================
+           CLOSE POPUP
+        ================================================= */
+
+        closePopup.addEventListener(
+            "click",
+            function () {
+
+                popup.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+
+
+        /* ================================================
+           CLICK OUTSIDE POPUP
+        ================================================= */
+
+        popup.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === popup
+                ) {
+
+                    popup.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* ================================================
+           ESCAPE KEY
+        ================================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    popup.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

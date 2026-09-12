@@ -1,0 +1,776 @@
+><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | The Overthinking Department™️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #4b2630 0%,
+                    #211118 42%,
+                    #080608 100%
+                );
+
+            color: #ead39b;
+            font-family: "Libre Baskerville", serif;
+            overflow-x: hidden;
+        }
+
+        /* STARS */
+
+        body::before {
+            content: "✦   ✧      ⋆   ✦        ✧   ⋆      ✦   ✧";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            pointer-events: none;
+
+            color: rgba(231, 189, 104, 0.18);
+            font-size: 18px;
+            line-height: 70px;
+            letter-spacing: 25px;
+
+            z-index: 0;
+
+            animation: starsMove 12s linear infinite;
+        }
+
+        @keyframes starsMove {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-70px);
+            }
+        }
+
+        /* HEADER */
+
+        header {
+            position: relative;
+            z-index: 2;
+
+            padding: 20px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: linear-gradient(180deg, #0a0508, #241018);
+
+            border-bottom: 1px solid rgba(222, 181, 91, 0.4);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .owl {
+            font-size: 32px;
+        }
+
+        .logo-text h1 {
+            font-family: "Cinzel", serif;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: #e7bd68;
+        }
+
+        .logo-text p {
+            font-family: "Caveat", cursive;
+            font-size: 15px;
+            color: #bfae82;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #ead39b;
+            text-decoration: none;
+
+            font-family: "Cinzel", serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e7bd68;
+        }
+
+        .department-number {
+            font-family: "Caveat", cursive;
+            color: #e7bd68;
+            font-size: 17px;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            z-index: 1;
+
+            width: 88%;
+            max-width: 1100px;
+
+            margin: 55px auto 35px;
+
+            padding: 45px 25px;
+
+            text-align: center;
+
+            background: linear-gradient(135deg, #efd7a1, #c49a5d);
+
+            color: #32141e;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 0 35px rgba(0, 0, 0, 0.5),
+                inset 0 0 20px rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-family: "Cinzel", serif;
+
+            font-size: clamp(28px, 5vw, 48px);
+
+            letter-spacing: 4px;
+
+            color: #6c1f2e;
+
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-family: "Caveat", cursive;
+
+            font-size: 23px;
+
+            color: #4b2630;
+        }
+
+        .divider {
+            margin: 20px auto 0;
+
+            width: 180px;
+            height: 1px;
+
+            background: #6c1f2e;
+
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "✦";
+
+            position: absolute;
+            top: -10px;
+
+            color: #6c1f2e;
+        }
+
+        .divider::before {
+            left: -20px;
+        }
+
+        .divider::after {
+            right: -20px;
+        }
+
+        /* INTRO */
+
+        .intro {
+            position: relative;
+            z-index: 1;
+
+            width: 85%;
+            max-width: 850px;
+
+            margin: 0 auto 40px;
+
+            text-align: center;
+        }
+
+        .intro h3 {
+            font-family: "Cinzel", serif;
+
+            color: #e7bd68;
+
+            font-size: 22px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #d5c59b;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+        }
+
+        /* ABOUT CARDS */
+
+        .cards-container {
+            position: relative;
+            z-index: 1;
+
+            width: 88%;
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .about-card {
+            min-height: 260px;
+
+            padding: 30px 25px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background: linear-gradient(
+                145deg,
+                #63202e,
+                #29131a
+            );
+
+            border: 1px solid rgba(231, 189, 104, 0.25);
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.35),
+                inset 0 0 20px rgba(255, 255, 255, 0.03);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.45),
+                0 0 15px rgba(231, 189, 104, 0.08);
+        }
+
+        .card-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .about-card h4 {
+            font-family: "Cinzel", serif;
+
+            font-size: 17px;
+
+            letter-spacing: 2px;
+
+            color: #e7bd68;
+
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: #eadfbe;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+        /* NOTICE */
+
+        .notice {
+            position: relative;
+            z-index: 1;
+
+            width: 88%;
+            max-width: 900px;
+
+            margin: 50px auto 30px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border: 1px solid rgba(231, 189, 104, 0.3);
+
+            background: rgba(41, 19, 26, 0.7);
+
+            border-radius: 7px;
+        }
+
+        .notice h3 {
+            font-family: "Cinzel", serif;
+
+            color: #e7bd68;
+
+            font-size: 16px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .notice p {
+            font-family: "Caveat", cursive;
+
+            color: #cbbd99;
+
+            font-size: 18px;
+        }
+
+        /* BACK BUTTON */
+
+        .back-container {
+            position: relative;
+            z-index: 1;
+
+            text-align: center;
+
+            margin: 35px 0 60px;
+        }
+
+        .back-button {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            background: #32141e;
+
+            color: #e7bd68;
+
+            text-decoration: none;
+
+            border: 1px solid rgba(231, 189, 104, 0.35);
+
+            border-radius: 4px;
+
+            font-family: "Cinzel", serif;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #63202e;
+
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            position: relative;
+            z-index: 1;
+
+            text-align: center;
+
+            padding: 30px 15px;
+
+            border-top: 1px solid rgba(222, 181, 91, 0.2);
+
+            background: rgba(5, 3, 5, 0.65);
+        }
+
+        footer h4 {
+            font-family: "Cinzel", serif;
+
+            color: #e7bd68;
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 7px;
+        }
+
+        footer p {
+            font-family: "Caveat", cursive;
+
+            color: #9f947c;
+
+            font-size: 16px;
+        }
+
+        .footer-symbols {
+            margin: 12px 0;
+
+            color: #e7bd68;
+
+            letter-spacing: 8px;
+        }
+
+        .copyright {
+            font-family: "Libre Baskerville", serif;
+
+            font-size: 10px;
+
+            color: #70695b;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            .department-number {
+                display: none;
+            }
+
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+
+            nav {
+                gap: 20px;
+            }
+
+            .hero {
+                margin-top: 35px;
+
+                padding: 35px 18px;
+            }
+
+            .hero h2 {
+                letter-spacing: 2px;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .intro {
+                width: 90%;
+            }
+
+            .about-card {
+                min-height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="owl">🦉</div>
+
+            <div class="logo-text">
+
+                <h1>THE OVERTHINKING DEPARTMENT™️</h1>
+
+                <p>
+                    Officially unofficial since absolutely nobody asked.
+                </p>
+
+            </div>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+        <div class="department-number">
+            D.O.T. #2026 ⚡
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-icon">
+            🏛️
+        </div>
+
+        <h2>
+            ABOUT THE DEPARTMENT
+        </h2>
+
+        <p>
+            Official information about the least official department.
+        </p>
+
+        <div class="divider"></div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <h3>
+            WELCOME TO THE DEPARTMENT
+        </h3>
+
+        <p>
+            The Overthinking Department™️ is a completely unofficial
+            organisation dedicated to those thoughts that appear out of
+            nowhere, stay far too long, and somehow become an entire
+            cinematic experience inside your head.
+        </p>
+
+    </section>
+
+
+    <!-- VISIBLE ABOUT SECTIONS -->
+
+    <section class="cards-container">
+
+
+        <div class="about-card">
+
+            <div class="card-icon">
+                🧠
+            </div>
+
+            <h4>
+                WHAT IS THIS?
+            </h4>
+
+            <p>
+                The Overthinking Department™️ is a fictional department
+                created for people whose brains refuse to stop at one
+                simple thought.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="card-icon">
+                🔍
+            </div>
+
+            <h4>
+                OUR MISSION
+            </h4>
+
+            <p>
+                Our mission is to investigate random thoughts, imaginary
+                scenarios, old memories, future possibilities and every
+                tiny detail that suddenly feels extremely important.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="card-icon">
+                📜
+            </div>
+
+            <h4>
+                DEPARTMENT RULES
+            </h4>
+
+            <p>
+                There are absolutely no official rules. However, thinking
+                about something that happened five years ago at 2 AM is
+                considered completely normal here.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="card-icon">
+                🪶
+            </div>
+
+            <h4>
+                OUR SPECIALITY
+            </h4>
+
+            <p>
+                We specialise in analysing conversations, situations,
+                possibilities, memories and the mysterious meaning behind
+                a simple "okay."
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="card-icon">
+                ⚡
+            </div>
+
+            <h4>
+                WHY DOES IT EXIST?
+            </h4>
+
+            <p>
+                Nobody really knows. It probably started with one random
+                thought and somehow turned into an entire department.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="card-icon">
+                🌙
+            </div>
+
+            <h4>
+                WHO RUNS IT?
+            </h4>
+
+            <p>
+                The Department is operated by imagination, curiosity,
+                memories, late-night thoughts and approximately 73 ideas
+                arriving at the same time.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <section class="notice">
+
+        <h3>
+            OFFICIAL DEPARTMENT NOTICE ⚡
+        </h3>
+
+        <p>
+            This department is completely unofficial, unnecessarily
+            dramatic, and has absolutely no government approval whatsoever.
+        </p>
+
+    </section>
+
+
+    <!-- BACK BUTTON -->
+
+    <div class="back-container">
+
+        <a href="index.html" class="back-button">
+            ← RETURN TO DEPARTMENT
+        </a>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h4>
+            DEPARTMENT OF UNNECESSARY THOUGHTS
+        </h4>
+
+        <p>
+            Division of Things That Probably Don't Matter.
+        </p>
+
+        <div class="footer-symbols">
+            🧠 ✦ 🪶
+        </div>
+
+        <div class="copyright">
+            ©️ 2026 The Overthinking Department™️ — Probably
+        </div>
+
+    </footer>
+
+</body>
+</html>
