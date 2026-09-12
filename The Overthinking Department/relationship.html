@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Relationship | The Overthinking Department™️</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cinzel:wght@500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            color: #ead39b;
+
+            font-family:
+                "Libre Baskerville",
+                serif;
+
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #293951 0%,
+                    #111b29 42%,
+                    #070b12 100%
+                );
+        }
+
+
+        /* =====================================================
+           MOVING STARS
+        ===================================================== */
+
+        .stars {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 0;
+
+            background-image:
+                radial-gradient(
+                    circle,
+                    rgba(255, 220, 140, 0.7) 1px,
+                    transparent 1px
+                );
+
+            background-size: 90px 90px;
+
+            opacity: 0.25;
+
+            animation:
+                moveStars 18s linear infinite;
+        }
+
+
+        @keyframes moveStars {
+
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(90px);
+            }
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+
+            min-height: 145px;
+
+            padding:
+                25px 5%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 30px;
+
+            position: relative;
+
+            z-index: 5;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #070d16,
+                    #111d2c
+                );
+
+            border-bottom:
+                1px solid
+                rgba(222, 181, 91, 0.4);
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+
+        .owl {
+
+            font-size: 65px;
+
+            animation:
+                floatingOwl 4s ease-in-out infinite;
+        }
+
+
+        @keyframes floatingOwl {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+
+        }
+
+
+        .logo h1 {
+
+            font-family:
+                "Cinzel",
+                serif;
+
+            font-size:
+                clamp(22px, 3vw, 38px);
+
+            line-height: 1;
+
+            letter-spacing: 2px;
+
+            color: #e7bd68;
+        }
+
+
+        .tagline {
+
+            margin-top: 8px;
+
+            font-family:
+                "Caveat",
+                cursive;
+
+            font-size: 20px;
+
+            color: #d9c69b;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+        }
+
+
+        nav a {
+
+            color: #e7cf94;
+
+            text-decoration: none;
+
+            font-family:
+                "Cinzel",
+                serif;
+
+            padding:
+                11px 18px;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+
+            background:
+                rgba(
+                    220,
+                    175,
+                    80,
+                    0.12
+                );
+
+            color: white;
+        }
+
+
+        nav a.active {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e2bb70,
+                    #a97830
+                );
+
+            color: #30190d;
+        }
+
+
+        .number {
+
+            margin-left: 10px;
+
+            padding:
+                8px 15px;
+
+            border:
+                1px solid
+                #cda75a;
+
+            border-radius: 50%;
+
+            transform:
+                rotate(-4deg);
+
+            font-family:
+                "Caveat",
+                cursive;
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .relationship-hero {
+
+            min-height: 350px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding:
+                60px 20px;
+
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        .hero-paper {
+
+            width:
+                min(850px, 92%);
+
+            padding:
+                45px 30px;
+
+            color: #25170c;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #efd7a1,
+                    #c49a5d
+                );
+
+            clip-path:
+                polygon(
+                    2% 5%,
+                    98% 1%,
+                    100% 94%,
+                    94% 100%,
+                    5% 97%,
+                    0 50%
+                );
+
+            box-shadow:
+                0 20px 55px
+                rgba(0,0,0,.55);
+
+            transform:
+                rotate(-1deg);
+        }
+
+
+        .hero-paper .symbol {
+
+            font-size: 38px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .hero-paper h2 {
+
+            font-family:
+                "Cinzel",
+                serif;
+
+            font-size:
+                clamp(32px, 5vw, 58px);
+
+            color: #6c1f2e;
+
+            margin-bottom: 12px;
+        }
+
+
+        .hero-paper p {
+
+            font-family:
+                "Caveat",
+                cursive;
+
+            font-size: 24px;
+
+            color: #54371c;
+        }
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .intro {
+
+            width:
+                min(900px, 90%);
+
+            margin:
+                10px auto 45px;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        .intro h3 {
+
+            font-family:
+                "Cinzel",
+                serif;
+
+            font-size: 24px;
+
+            color: #e3bd6d;
+
+            margin-bottom: 15px;
+        }
+
+
+        .intro p {
+
+            font-family:
+                "Caveat",
+                cursive;
+
+            font-size: 23px;
+
+            line-height: 1.4;
+
+            color: #e1d2ac;
+        }
+
+
+        /* =====================================================
+           CARDS GRID
+        ===================================================== */
+
+        .thoughts {
+
+            width:
+                min(1150px, 92%);
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        .thought-card {
+
+            min-height: 245px;
+
+            padding:
+                30px 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+
+            cursor: pointer;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #63202e,
+                    #29131a
+                );
+
+            border:
+                1px solid
+                rgba(
+                    222,
+                    179,
+                    88,
+                    0.55
+                );
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,.4);
+
+            transition:
+                transform .45s
+                cubic-bezier(.2,.8,.2,1),
+
+                box-shadow .45s ease,
+
+                background .5s ease;
+        }
+
+
+        /* Inner magical border */
+
+        .thought-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 9px;
+
+            border:
+                1px solid
+                rgba(
+                    238,
+                    204,
+                    125,
+                    .18
+                );
+
+            pointer-events: none;
+
+            transition: .5s ease;
+        }
+
+
+        /* =====================================================
+           HOVER
+        ===================================================== */
+
+        .thought-card:hover {
+
+            transform:
+                translateY(-8px)
+                rotate(-1deg);
+
+            box-shadow:
+                0 18px 38px
+                rgba(0,0,0,.55),
+
+                0 0 18px
+                rgba(
+                    220,
+                    180,
+                    80,
+                    .18
+                );
+        }
+
+
+        /* =====================================================
+           FRONT OF CARD
+        ===================================================== */
+
+        .card-front {
+
+            position: relative;
+
+            z-index: 2;
+
+            transition:
+                transform .45s ease,
+                opacity .35s ease;
+        }
+
+
+        .card-front .heart {
+
+            font-size: 46px;
+
+            margin-bottom: 12px;
+
+            transition:
+                transform .5s ease,
+                filter .5s ease;
+        }
+
+
+        .card-front h3 {
+
+            font-family:
+                "Cinzel",
+                serif;
+
+            color: #edcc7d;
+
+            font-size: 19px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .tap {
+
+            font-family:
+                "Caveat",
+                cursive;
+
+            color: #d6b86e;
+
+            font-size: 19px;
+        }
+
+
+        /* =====================================================
+           HIDDEN CONTENT
+        ===================================================== */
+
+        .card-content {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 35px;
+
+            opacity: 0;
+
+            transform:
+                scale(.7)
+                rotateY(90deg);
+
+            pointer-events: none;
+
+            transition:
+                opacity .35s ease .2s,
+
+                transform .6s
+                cubic-bezier(.2,.8,.2,1);
+        }
+
+
+        .card-content p {
+
+            font-family:
+                "Caveat",
+                cursive;
+
+            font-size: 25px;
+
+            line-height: 1.3;
+
+            color: #eadbb5;
+        }
+
+
+        /* =====================================================
+           OPEN CARD
+        ===================================================== */
+
+        .thought-card.open {
+
+            min-height: 285px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #7a2939,
+                    #351720
+                );
+
+            transform:
+                translateY(-5px)
+                scale(1.03);
+
+            box-shadow:
+                0 20px 45px
+                rgba(0,0,0,.65),
+
+                0 0 30px
+                rgba(
+                    221,
+                    177,
+                    78,
+                    .3
+                );
+        }
+
+
+        /* Magical border when open */
+
+        .thought-card.open::before {
+
+            border-color:
+                rgba(
+                    240,
+                    205,
+                    125,
+                    .55
+                );
+
+            box-shadow:
+                0 0 18px
+                rgba(
+                    232,
+                    190,
+                    95,
+                    .15
+                );
+        }
+
+
+        /* Hide front */
+
+        .thought-card.open .card-front {
+
+            opacity: 0;
+
+            transform:
+                scale(.6)
+                rotateY(-90deg);
+
+            pointer-events: none;
+        }
+
+
+        /* Show content */
+
+        .thought-card.open .card-content {
+
+            opacity: 1;
+
+            transform:
+                scale(1)
+                rotateY(0deg);
+
+            pointer-events: auto;
+        }
+
+
+        /* =====================================================
+           SPARKLE EFFECT
+        ===================================================== */
+
+        .thought-card::after {
+
+            content:
+                "✦   ✧   ⋆   ✦   ✧";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                scale(.3);
+
+            color:
+                #f1cf7b;
+
+            font-size: 22px;
+
+            letter-spacing: 12px;
+
+            opacity: 0;
+
+            pointer-events: none;
+        }
+
+
+        .thought-card.magic::after {
+
+            animation:
+                magicSparkle .9s ease-out;
+        }
+
+
+        @keyframes magicSparkle {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(.2)
+                    rotate(0deg);
+            }
+
+
+            30% {
+
+                opacity: 1;
+            }
+
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(3)
+                    rotate(25deg);
+            }
+
+        }
+
+
+        /* =====================================================
+           MAGIC HEART
+        ===================================================== */
+
+        .thought-card.open .heart {
+
+            transform:
+                scale(1.25);
+
+            filter:
+                drop-shadow(
+                    0 0 12px
+                    rgba(
+                        239,
+                        196,
+                        91,
+                        .8
+                    )
+                );
+        }
+
+
+        /* =====================================================
+           NOTICE BOX
+        ===================================================== */
+
+        .overthinking-box {
+
+            width:
+                min(900px, 90%);
+
+            margin:
+                60px auto;
+
+            padding:
+                35px 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d7b979,
+                    #a77d3c
+                );
+
+            color:
+                #29180b;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,.45);
+
+            transform:
+                rotate(.7deg);
+
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        .overthinking-box h3 {
+
+            font-family:
+                "Cinzel",
+                serif;
+
+            font-size: 24px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .overthinking-box p {
+
+            font-family:
+                "Caveat",
+                cursive;
+
+            font-size: 24px;
+
+            line-height: 1.3;
+        }
+
+
+        /* =====================================================
+           BACK BUTTON
+        ===================================================== */
+
+        .back-home {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin:
+                45px 0 65px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .back-home a {
+
+            display: inline-block;
+
+            padding:
+                14px 30px;
+
+            text-decoration: none;
+
+            font-family:
+                "Cinzel",
+                serif;
+
+            color:
+                #e6c77e;
+
+            border:
+                1px solid
+                #bd9144;
+
+            background:
+                #32141e;
+
+            transition: .3s;
+        }
+
+
+        .back-home a:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,.5);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            min-height: 120px;
+
+            padding:
+                25px 6%;
+
+            background:
+                #080f18;
+
+            border-top:
+                1px solid
+                rgba(
+                    213,
+                    171,
+                    81,
+                    .4
+                );
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 25px;
+
+            font-family:
+                "Caveat",
+                cursive;
+
+            color:
+                #d5bf88;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        footer p {
+
+            font-size: 18px;
+        }
+
+
+        footer small {
+
+            font-size: 16px;
+        }
+
+
+        .copyright {
+
+            text-align: right;
+
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            header {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .logo {
+
+                flex-direction: column;
+            }
+
+
+            .thoughts {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            footer {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .copyright {
+
+                text-align: center;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 550px) {
+
+            header {
+
+                padding:
+                    22px 15px;
+            }
+
+
+            .thoughts {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero-paper {
+
+                padding:
+                    40px 20px;
+            }
+
+
+            .hero-paper h2 {
+
+                font-size: 30px;
+            }
+
+
+            nav {
+
+                gap: 2px;
+            }
+
+
+            nav a {
+
+                padding:
+                    8px 10px;
+
+                font-size: 13px;
+            }
+
+
+            .number {
+
+                margin-left: 0;
+
+                font-size: 15px;
+            }
+
+
+            .intro h3 {
+
+                font-size: 19px;
+            }
+
+
+            .intro p {
+
+                font-size: 21px;
+            }
+
+
+            .thought-card {
+
+                min-height: 230px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND STARS
+    ===================================================== -->
+
+    <div class="stars"></div>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="owl">
+                🦉
+            </div>
+
+            <div>
+
+                <h1>
+                    THE OVERTHINKING
+                    <br>
+                    DEPARTMENT™️
+                </h1>
+
+                <p class="tagline">
+                    Officially unofficial since absolutely nobody asked.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <div class="number">
+                D.O.T. #2026 ⚡
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="relationship-hero">
+
+        <div class="hero-paper">
+
+            <div class="symbol">
+                ♡
+            </div>
+
+            <h2>
+                RELATIONSHIP
+            </h2>
+
+            <p>
+                For things they probably didn't mean.
+            </p>
+
+            <div style="margin-top:18px;">
+                ───── ✦ ─────
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRO
+    ===================================================== -->
+
+    <section class="intro">
+
+        <h3>
+            WELCOME TO THE DEPARTMENT OF RELATIONSHIP OVERTHINKING
+        </h3>
+
+        <p>
+            Where one "okay" becomes a three-hour investigation,
+            one unread message becomes a mystery,
+            and a simple conversation becomes a full-blown case.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MAGICAL CARDS
+    ===================================================== -->
+
+    <section class="thoughts">
+
+
+        <!-- CARD 1 -->
+
+        <div class="thought-card"
+             onclick="toggleCard(this)">
+
+            <div class="card-front">
+
+                <div class="heart">
+                    💌
+                </div>
+
+                <h3>
+                    THE MESSAGE
+                </h3>
+
+                <p class="tap">
+                    ✦ TAP TO OPEN ✦
+                </p>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <p>
+                    "Okay."
+                    <br><br>
+
+                    Why only okay?
+                    <br>
+
+                    What does the period mean?
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 2 -->
+
+        <div class="thought-card"
+             onclick="toggleCard(this)">
+
+            <div class="card-front">
+
+                <div class="heart">
+                    👀
+                </div>
+
+                <h3>
+                    THE SEEN ZONE
+                </h3>
+
+                <p class="tap">
+                    ✦ TAP TO OPEN ✦
+                </p>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <p>
+                    They saw your message.
+                    <br><br>
+
+                    They haven't replied.
+                    <br><br>
+
+                    Investigation begins.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 3 -->
+
+        <div class="thought-card"
+             onclick="toggleCard(this)">
+
+            <div class="card-front">
+
+                <div class="heart">
+                    🫠
+                </div>
+
+                <h3>
+                    THE REPLAY
+                </h3>
+
+                <p class="tap">
+                    ✦ TAP TO OPEN ✦
+                </p>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <p>
+                    Remember that conversation
+                    from three days ago?
+                    <br><br>
+
+                    Let's analyse it again.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 4 -->
+
+        <div class="thought-card"
+             onclick="toggleCard(this)">
+
+            <div class="card-front">
+
+                <div class="heart">
+                    💭
+                </div>
+
+                <h3>
+                    WHAT IF?
+                </h3>
+
+                <p class="tap">
+                    ✦ TAP TO OPEN ✦
+                </p>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <p>
+                    What if they meant
+                    something completely different?
+                    <br><br>
+
+                    And what if we're completely wrong?
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 5 -->
+
+        <div class="thought-card"
+             onclick="toggleCard(this)">
+
+            <div class="card-front">
+
+                <div class="heart">
+                    📱
+                </div>
+
+                <h3>
+                    THE TEXTING THEORY
+                </h3>
+
+                <p class="tap">
+                    ✦ TAP TO OPEN ✦
+                </p>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <p>
+                    They normally reply
+                    in five minutes.
+                    <br><br>
+
+                    It has been six.
+                    <br><br>
+
+                    Something is definitely happening.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 6 -->
+
+        <div class="thought-card"
+             onclick="toggleCard(this)">
+
+            <div class="card-front">
+
+                <div class="heart">
+                    ⚡
+                </div>
+
+                <h3>
+                    FINAL VERDICT
+                </h3>
+
+                <p class="tap">
+                    ✦ TAP TO OPEN ✦
+                </p>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <p>
+                    Nobody actually knows
+                    what they meant.
+                    <br><br>
+
+                    But we'll think about it anyway.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DEPARTMENT NOTICE
+    ===================================================== -->
+
+    <section class="overthinking-box">
+
+        <h3>
+            OFFICIAL DEPARTMENT NOTICE ⚡
+        </h3>
+
+        <p>
+
+            Please do not reread old conversations.
+
+            <br>
+
+            Please do not analyse punctuation.
+
+            <br>
+
+            Please do not create imaginary scenarios.
+
+            <br><br>
+
+            You are absolutely going to do all three.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BACK BUTTON
+    ===================================================== -->
+
+    <div class="back-home">
+
+        <a href="index.html">
+            ← BACK TO DEPARTMENT
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+
+        <div>
+
+            <p>
+                Department of Unnecessary Thoughts
+            </p>
+
+            <small>
+                Division of Things That Probably Don't Matter.
+            </small>
+
+        </div>
+
+
+        <div>
+            🧠 ✦ 🪶
+        </div>
+
+
+        <div class="copyright">
+
+            ©️ 2026 Department of Overthinking.
+
+            <br>
+
+            All thoughts are unnecessary. ♡
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        function toggleCard(card) {
+
+            /* ---------------------------------------------
+               Trigger magical sparkle animation
+            --------------------------------------------- */
+
+            card.classList.remove("magic");
+
+            /*
+               Forces browser to restart animation
+               every time the card is clicked.
+            */
+
+            void card.offsetWidth;
+
+            card.classList.add("magic");
+
+
+            /* ---------------------------------------------
+               Open / close card
+            --------------------------------------------- */
+
+            card.classList.toggle("open");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

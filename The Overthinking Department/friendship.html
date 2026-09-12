@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Friendship | The Overthinking Department</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cinzel:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #293951 0%,
+            #111b29 42%,
+            #070b12 100%
+        );
+
+    color: #ead39b;
+    font-family: "Libre Baskerville", serif;
+    overflow-x: hidden;
+}
+
+/* ================= STARS ================= */
+
+body::before {
+    content: "✦   ·   ✧      ⋆   ·      ✦      ·   ✧   ⋆";
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    color: rgba(255, 231, 169, 0.35);
+    font-size: 20px;
+    letter-spacing: 20px;
+    line-height: 90px;
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: starsMove 12s linear infinite;
+}
+
+@keyframes starsMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-90px);
+    }
+
+}
+
+/* ================= HEADER ================= */
+
+header {
+
+    background: linear-gradient(
+        180deg,
+        #070d16,
+        #111d2c
+    );
+
+    border-bottom: 1px solid rgba(222, 181, 91, 0.4);
+
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo-area {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.owl {
+    font-size: 35px;
+}
+
+.logo-text {
+    font-family: "Cinzel", serif;
+}
+
+.logo-text h2 {
+
+    color: #e7bd68;
+
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.logo-text p {
+
+    color: #d9c69b;
+
+    font-family: "Caveat", cursive;
+    font-size: 17px;
+}
+
+nav {
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+
+    text-decoration: none;
+
+    color: #ead39b;
+
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px #e7bd68;
+}
+
+.department-number {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 12px;
+
+    color: #e7bd68;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+
+    max-width: 900px;
+
+    margin: 55px auto 30px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    /* SAME HERO LAYOUT */
+    background:
+        linear-gradient(
+            135deg,
+            #efd7a1,
+            #c49a5d
+        );
+
+    color: #30141c;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.5),
+        inset 0 0 30px rgba(255,255,255,0.15);
+
+    position: relative;
+}
+
+.hero::before,
+.hero::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    color: #6c1f2e;
+
+    font-size: 25px;
+}
+
+.hero::before {
+
+    top: 12px;
+    left: 18px;
+}
+
+.hero::after {
+
+    bottom: 12px;
+    right: 18px;
+}
+
+.feather {
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+.hero h1 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(35px, 7vw, 65px);
+
+    letter-spacing: 6px;
+
+    color: #6c1f2e;
+}
+
+.hero p {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 24px;
+
+    margin-top: 8px;
+}
+
+.divider {
+
+    margin-top: 18px;
+
+    font-size: 20px;
+}
+
+/* ================= CONTENT ================= */
+
+.container {
+
+    width: min(1100px, 92%);
+
+    margin: 50px auto;
+}
+
+.intro {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.intro h2 {
+
+    font-family: "Cinzel", serif;
+
+    color: #e7bd68;
+
+    font-size: clamp(20px, 4vw, 28px);
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.intro p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #d8c89f;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+/* ================= CARDS ================= */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.thought-card {
+
+    min-height: 260px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+.card-inner {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 260px;
+
+    position: relative;
+}
+
+/* ================= FRIENDSHIP CARD COLOUR ================= */
+
+/* CLOSED */
+
+.card-front {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #746550,
+            #3a3024
+        );
+
+    border: 1px solid
+        rgba(218, 201, 160, 0.75);
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(0,0,0,0.5),
+
+        inset 0 0 25px
+        rgba(225,205,160,0.08);
+
+    transition:
+
+        transform 0.65s ease,
+        opacity 0.45s ease,
+        box-shadow 0.5s ease;
+
+    z-index: 2;
+}
+
+.card-front::before {
+
+    content: "✦";
+
+    font-size: 35px;
+
+    color: #eee1c3;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 8px
+        rgba(238,225,195,0.7);
+}
+
+.card-front h3 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 18px;
+
+    color: #eee1c3;
+
+    letter-spacing: 1px;
+}
+
+.card-front span {
+
+    margin-top: 12px;
+
+    color: #e2d6bd;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 18px;
+}
+
+/* ================= OPEN CARD ================= */
+
+.card-content {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #806f58,
+            #403528
+        );
+
+    border: 1px solid
+        rgba(218, 201, 160, 0.8);
+
+    opacity: 0;
+
+    transform:
+        rotateY(90deg)
+        scale(0.85);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(218, 201, 160, 0.18);
+
+    transition:
+
+        transform 0.65s ease,
+        opacity 0.45s ease;
+}
+
+.card-content .emoji {
+
+    font-size: 34px;
+
+    margin-bottom: 12px;
+}
+
+.card-content h3 {
+
+    color: #f0e2c4;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 18px;
+
+    margin-bottom: 15px;
+}
+
+.card-content p {
+
+    color: #e8ddc8;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+/* ================= OPEN STATE ================= */
+
+.thought-card.open .card-front {
+
+    opacity: 0;
+
+    transform:
+        rotateY(-90deg)
+        scale(0.85);
+
+    pointer-events: none;
+}
+
+.thought-card.open .card-content {
+
+    opacity: 1;
+
+    transform:
+        rotateY(0deg)
+        scale(1);
+}
+
+/* ================= MAGIC ================= */
+
+.thought-card::after {
+
+    content:
+        "✦   ✧   ⋆   ✦   ✧";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #f3e5c2;
+
+    font-size: 22px;
+
+    letter-spacing: 8px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    text-shadow:
+
+        0 0 8px #fff,
+
+        0 0 18px #d8c18b;
+}
+
+.thought-card.magic::after {
+
+    animation:
+        magicSparkle 0.9s ease-out;
+}
+
+@keyframes magicSparkle {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.3)
+            rotate(0deg);
+    }
+
+    40% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.2)
+            rotate(10deg);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(1.8)
+            rotate(-10deg);
+    }
+
+}
+
+/* ================= NOTICE ================= */
+
+.notice {
+
+    margin: 50px auto 30px;
+
+    max-width: 800px;
+
+    border:
+        1px solid
+        rgba(218, 201, 160, 0.5);
+
+    background:
+        rgba(48, 40, 30, 0.75);
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 8px;
+}
+
+.notice h3 {
+
+    font-family: "Cinzel", serif;
+
+    color: #e7d5ad;
+
+    font-size: 17px;
+
+    margin-bottom: 10px;
+}
+
+.notice p {
+
+    color: #d9ccb2;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-button {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 30px auto 60px;
+
+    padding: 13px 25px;
+
+    background:
+        #342b21;
+
+    border:
+        1px solid
+        rgba(218, 201, 160, 0.6);
+
+    color: #e7d5ad;
+
+    text-decoration: none;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.back-button:hover {
+
+    background: #584938;
+
+    box-shadow:
+        0 0 20px
+        rgba(218, 201, 160, 0.25);
+
+    transform:
+        translateY(-2px);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-top:
+        1px solid
+        rgba(218, 201, 160, 0.25);
+
+    color: #bfae86;
+
+    font-size: 12px;
+}
+
+footer h3 {
+
+    font-family: "Cinzel", serif;
+
+    color: #e7bd68;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+footer p {
+
+    margin: 5px;
+}
+
+.footer-symbols {
+
+    margin: 15px 0;
+
+    color: #e7d5ad;
+
+    font-size: 18px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+
+    header {
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .logo-area {
+
+        justify-content: center;
+    }
+
+    nav {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .hero {
+
+        margin-top: 30px;
+
+        padding: 30px 15px;
+    }
+
+    .hero h1 {
+
+        letter-spacing: 3px;
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+    }
+
+    .thought-card,
+    .card-inner {
+
+        min-height: 240px;
+    }
+
+    .intro h2 {
+
+        font-size: 20px;
+    }
+
+    nav {
+
+        gap: 12px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo-area">
+
+        <div class="owl">
+            🦉
+        </div>
+
+        <div class="logo-text">
+
+            <h2>
+                THE OVERTHINKING DEPARTMENT™️
+            </h2>
+
+            <p>
+                Officially unofficial since absolutely nobody asked.
+            </p>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <span class="department-number">
+            D.O.T. #2026 ⚡
+        </span>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="feather">
+        🪶
+    </div>
+
+    <h1>
+        FRIENDSHIP
+    </h1>
+
+    <p>
+        Because "seen" can mean 47 different things.
+    </p>
+
+    <div class="divider">
+        ───── ✦ ─────
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+    <section class="intro">
+
+        <h2>
+            WELCOME TO THE DEPARTMENT OF FRIENDSHIP OVERTHINKING
+        </h2>
+
+        <p>
+            Where "K" becomes a friendship crisis,
+            a cancelled plan becomes a personal attack,
+            and "seen" becomes a complete investigation.
+        </p>
+
+    </section>
+
+
+    <!-- ================= FRIENDSHIP CARDS ================= -->
+
+    <section class="cards">
+
+
+        <!-- CARD 1 -->
+
+        <div
+            class="thought-card"
+            onclick="toggleCard(this)"
+        >
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <h3>
+                        THE SEEN ZONE
+                    </h3>
+
+                    <span>
+                        Tap to investigate 👀
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="emoji">
+                        👀
+                    </div>
+
+                    <h3>
+                        THE SEEN ZONE
+                    </h3>
+
+                    <p>
+                        They saw your message 3 minutes ago.
+                        It's been 4 hours.
+                        Clearly something is wrong.
+                        Or maybe they're just busy.
+                        But probably something is wrong.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div
+            class="thought-card"
+            onclick="toggleCard(this)"
+        >
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <h3>
+                        THE "K" INCIDENT
+                    </h3>
+
+                    <span>
+                        Tap to investigate 💬
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="emoji">
+                        💬
+                    </div>
+
+                    <h3>
+                        THE "K" INCIDENT
+                    </h3>
+
+                    <p>
+                        They replied: "K".
+                        Not "okay".
+                        Not "sure".
+                        Just K.
+                        Investigation begins immediately.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div
+            class="thought-card"
+            onclick="toggleCard(this)"
+        >
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <h3>
+                        CANCELLED PLANS
+                    </h3>
+
+                    <span>
+                        Tap to investigate 📅
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="emoji">
+                        📅
+                    </div>
+
+                    <h3>
+                        CANCELLED PLANS
+                    </h3>
+
+                    <p>
+                        "Sorry, can't make it today."
+                        They are probably tired.
+                        But what if they secretly don't
+                        want to hang out anymore?
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+
+        <div
+            class="thought-card"
+            onclick="toggleCard(this)"
+        >
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <h3>
+                        THE GROUP CHAT
+                    </h3>
+
+                    <span>
+                        Tap to investigate 🧠
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="emoji">
+                        🧠
+                    </div>
+
+                    <h3>
+                        THE GROUP CHAT
+                    </h3>
+
+                    <p>
+                        Everyone is talking.
+                        You sent something.
+                        Nobody replied.
+                        Congratulations.
+                        You now have 17 possible explanations.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 5 -->
+
+        <div
+            class="thought-card"
+            onclick="toggleCard(this)"
+        >
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <h3>
+                        THE THIRD WHEEL
+                    </h3>
+
+                    <span>
+                        Tap to investigate 🫠
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="emoji">
+                        🫠
+                    </div>
+
+                    <h3>
+                        THE THIRD WHEEL
+                    </h3>
+
+                    <p>
+                        They made plans without you.
+                        Obviously you're being replaced.
+                        Or maybe they simply forgot to ask.
+                        Either way, overthinking activated.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 6 -->
+
+        <div
+            class="thought-card"
+            onclick="toggleCard(this)"
+        >
+
+            <div class="card-inner">
+
+                <div class="card-front">
+
+                    <h3>
+                        THE FRIENDSHIP VERDICT
+                    </h3>
+
+                    <span>
+                        Tap to investigate 🪄
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="emoji">
+                        🪄
+                    </div>
+
+                    <h3>
+                        THE FRIENDSHIP VERDICT
+                    </h3>
+
+                    <p>
+                        After extensive investigation,
+                        37 theories, and approximately
+                        2 hours of overthinking...
+                        they're probably still your friend.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= NOTICE ================= -->
+
+    <section class="notice">
+
+        <h3>
+            OFFICIAL FRIENDSHIP DEPARTMENT NOTICE ⚡
+        </h3>
+
+        <p>
+            Please do not check their last seen.
+            Please do not reread the group chat.
+            Please do not ask another friend what they think.
+            You are absolutely going to do all three.
+        </p>
+
+    </section>
+
+
+    <!-- ================= BACK ================= -->
+
+    <a
+        href="index.html"
+        class="back-button"
+    >
+        ← BACK TO DEPARTMENT
+    </a>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        Department of Unnecessary Thoughts
+    </h3>
+
+    <p>
+        Division of Things That Probably Don't Matter.
+    </p>
+
+    <div class="footer-symbols">
+        🧠 ✦ 🪶
+    </div>
+
+    <p>
+        ©️ 2026 Department of Overthinking.
+        All thoughts are unnecessary. ♡
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function toggleCard(card) {
+
+    card.classList.remove("magic");
+
+    void card.offsetWidth;
+
+    card.classList.add("magic");
+
+    card.classList.toggle("open");
+
+}
+
+</script>
+
+</body>
+</html>
